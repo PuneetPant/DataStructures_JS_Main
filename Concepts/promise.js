@@ -12,15 +12,12 @@ import fetch from "node-fetch";
 // })
 // console.log(promise)
 
-
-
 // const promise = fetch('https://jsonplaceholder.typicode.com/todos');
 // promise.then(res => {
 //   return res.json()
 // }).then(ans => {
 //   console.log('ans: ', ans)
 // })
-
 
 // function getData() {
 //   const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
@@ -50,7 +47,7 @@ import fetch from "node-fetch";
 //   }
 
 // }
-// const response = getData()
+// const response = getmm,,,,,,÷Data()
 // response.then(res => {
 
 // })
@@ -103,13 +100,15 @@ import fetch from "node-fetch";
 //   })
 
 const promise = new Promise((resolve) => {
-  console.log(2)
-  resolve()
-  console.log(3)
-})
+  console.log(2);
+  resolve();
+  console.log(3);
+});
 
-promise.then(res => {
-  console.log(5)
-}).then(() => {
-  console.log(6)
-})
+promise
+  .then((res) => {
+    console.log(5);
+  })
+  .then(() => {
+    console.log(6);
+  });
