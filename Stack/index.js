@@ -5,14 +5,14 @@ const duplicateBrackets = (str) => {
   for (let i = 0; i < str.length; i++) {
     let ch = str.charAt(i);
 
-    if (ch != ')') {
+    if (ch != ")") {
       stack.push(ch);
     } else {
-      if (stack[stack.length - 1] == '(') {
+      if (stack[stack.length - 1] == "(") {
         ansFlag = true;
       } else {
         while (stack.length > 0) {
-          if (stack[stack.length - 1] == '(') {
+          if (stack[stack.length - 1] == "(") {
             stack.pop();
             break;
           }
@@ -22,7 +22,7 @@ const duplicateBrackets = (str) => {
     }
   }
   return ansFlag;
-}
+};
 
 const balancedBrackets = (str) => {
   let ansFlag = true;
@@ -30,25 +30,24 @@ const balancedBrackets = (str) => {
   for (let i = 0; i < str.length; i++) {
     let ch = str.charAt(i);
 
-    if (ch == '(' || ch == '[' || ch == '{') {
+    if (ch == "(" || ch == "[" || ch == "{") {
       stack.push(ch);
-    } else if (ch == ')') {
-      if (stack[stack.length - 1] == '(') {
+    } else if (ch == ")") {
+      if (stack[stack.length - 1] == "(") {
         stack.pop();
       } else {
         ansFlag = false;
         break;
       }
-
-    } else if (ch == ']') {
-      if (stack[stack.length - 1] == '[') {
+    } else if (ch == "]") {
+      if (stack[stack.length - 1] == "[") {
         stack.pop();
       } else {
         ansFlag = false;
         break;
       }
-    } else if (ch == '}') {
-      if (stack[stack.length - 1] == '{') {
+    } else if (ch == "}") {
+      if (stack[stack.length - 1] == "{") {
         stack.pop();
       } else {
         ansFlag = false;
@@ -60,9 +59,10 @@ const balancedBrackets = (str) => {
     ansFlag = false;
   }
   return ansFlag;
-}
+};
 
 const nextGreaterToRight = (arr) => {
+  // const arr = [2, 5, 9, 3, 1, 12, 6, 2, 7];
   let stack = [];
   let ans = [];
 
@@ -71,19 +71,19 @@ const nextGreaterToRight = (arr) => {
 
   for (let i = arr.length - 2; i >= 0; i--) {
     while (stack.length > 0 && arr[i] >= stack[stack.length - 1]) {
-      stack.pop()
+      stack.pop();
     }
 
     if (stack.length == 0) {
-      ans[i] = -1
+      ans[i] = -1;
     } else {
       ans[i] = stack[stack.length - 1];
     }
     stack.push(arr[i]);
   }
 
-  console.log('ans: ', ans);
-}
+  console.log("ans: ", ans);
+};
 
 const stockSpan = (arr) => {
   let stack = [];
@@ -99,7 +99,6 @@ const stockSpan = (arr) => {
   stack.push(new Pair(arr[0], 0));
   ans[0] = 1;
   for (let i = 1; i < arr.length; i++) {
-
     while (stack.length > 0 && arr[i] >= stack[stack.length - 1].val) {
       stack.pop();
     }
@@ -114,7 +113,7 @@ const stockSpan = (arr) => {
     stack.push(new Pair(arr[i], i));
   }
   console.log(ans);
-}
+};
 
 const largestAreaHistogram = (arr) => {
   let stack = [];
@@ -138,7 +137,7 @@ const largestAreaHistogram = (arr) => {
     } else {
       rb[i] = stack[stack.length - 1].idx;
     }
-    stack.push(new Pair(arr[i], i))
+    stack.push(new Pair(arr[i], i));
   }
   console.log(rb);
 
@@ -149,7 +148,7 @@ const largestAreaHistogram = (arr) => {
 
   for (let i = 1; i < arr.length; i++) {
     while (stack.length > 0 && arr[i] <= stack[stack.length - 1].val) {
-      stack.pop()
+      stack.pop();
     }
 
     if (stack.length == 0) {
@@ -157,7 +156,7 @@ const largestAreaHistogram = (arr) => {
     } else {
       lb[i] = stack[stack.length - 1].idx;
     }
-    stack.push(new Pair(arr[i], i))
+    stack.push(new Pair(arr[i], i));
   }
   console.log(lb);
 
@@ -165,12 +164,11 @@ const largestAreaHistogram = (arr) => {
   for (let i = 0; i < rb.length; i++) {
     let newWidth = (rb[i] - lb[i] - 1) * arr[i];
     if (newWidth > width) {
-      width = newWidth
+      width = newWidth;
     }
   }
   return width;
-}
-
+};
 
 const main = () => {
   // const str = '((a+b)+(c+d))';
@@ -182,8 +180,8 @@ const main = () => {
   // const ans = balancedBrackets(str);
   // console.log('ans: ', ans);
 
-  // const arr = [2, 5, 9, 3, 1, 12, 6, 8, 7];
-  // nextGreaterToRight(arr);
+  const arr = [2, 5, 9, 3, 1, 12, 6, 2, 7];
+  nextGreaterToRight(arr);
 
   // const arr = [2, 5, 9, 3, 1, 12, 6, 8, 7];
   // stockSpan(arr);
@@ -191,7 +189,6 @@ const main = () => {
   // const arr = [6, 2, 5, 4, 5, 1, 6]
   // const ans = largestAreaHistogram(arr)
   // console.log('ans: ', ans);
-}
-
+};
 
 main();

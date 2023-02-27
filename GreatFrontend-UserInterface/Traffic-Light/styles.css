@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+  }
+  .frame{
+    border: 1px solid black;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 10px;
+  }
+  .light{
+    border:1px solid black;
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  .red{
+    background-color: red;
+  }
+  

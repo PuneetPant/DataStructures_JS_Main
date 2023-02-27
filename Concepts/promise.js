@@ -12,15 +12,12 @@ import fetch from "node-fetch";
 // })
 // console.log(promise)
 
-
-
 // const promise = fetch('https://jsonplaceholder.typicode.com/todos');
 // promise.then(res => {
 //   return res.json()
 // }).then(ans => {
 //   console.log('ans: ', ans)
 // })
-
 
 // function getData() {
 //   const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
@@ -42,8 +39,9 @@ import fetch from "node-fetch";
 
 // const getData = async () => {
 //   try {
-//     const response = await fetch("https://ghibliapi.herokuapp.com/people");
-//     return response;
+//     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+//     const data = await response.json()
+//     return data;
 //   }
 //   catch (err) {
 //     return err;
@@ -51,9 +49,44 @@ import fetch from "node-fetch";
 
 // }
 // const response = getData()
+// console.log(response)
 // response.then(res => {
-
+//   console.log(res)
 // })
+
+const getUsers = async () => {
+
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    let user = await response.json();
+    return user
+
+  } catch (err) {
+    // catches errors both in fetch and response.json
+    console.log(err);
+  }
+}
+let ans = await getUsers();
+console.log("ans: ", ans)
+
+
+const getUsers = async () => {
+
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    let user = await response.json();
+    return user
+
+  } catch (err) {
+    // catches errors both in fetch and response.json
+    console.log(err);
+  }
+}
+const wrapper = async () => {
+  let ans = await getUsers();
+  console.log("ans: ", ans)
+}
+wrapper()
 
 // const getData =  () => {
 //   try {
@@ -102,14 +135,16 @@ import fetch from "node-fetch";
 //     console.log(err)
 //   })
 
-const promise = new Promise((resolve) => {
-  console.log(2)
-  resolve()
-  console.log(3)
-})
+// const promise = new Promise((resolve) => {
+//   console.log(2);
+//   resolve();
+//   console.log(3);
+// });
 
-promise.then(res => {
-  console.log(5)
-}).then(() => {
-  console.log(6)
-})
+// promise
+//   .then((res) => {
+//     console.log(5);
+//   })
+//   .then(() => {
+//     console.log(6);
+//   });
