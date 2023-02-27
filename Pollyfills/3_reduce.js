@@ -1,7 +1,5 @@
 Array.prototype.newReduce = function (fn, initialValue = 0) {
-  // console.log();
   let result = initialValue;
-  // let val = initialValue;
   for (let i = 0; i < this.length; i++) {
     console.log(result);
     result = fn(result, this[i]);

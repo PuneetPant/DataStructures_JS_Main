@@ -16,3 +16,13 @@ const main = () => {
   console.log(ans);
 };
 main();
+// Array.prototype.myFilter = function (fn) {
+//   let arr = [...this];
+//   let ans = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (fn(arr[i])) {
+//       ans.push(arr[i])
+//     }
+//   }
+//   return ans;
+// }
