@@ -31,5 +31,5 @@ const document = new DOMParser().parseFromString(
   </div>`,
   "text/html"
 );
-
+console.log(document)
 getElementsByTagName(document.body, "div");
