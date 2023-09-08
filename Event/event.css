@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 50px;
+}
+.grandParent {
+  /* background-color: black;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  margin-top: 50px;
+}
+
+.parent {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.child {
+  background-color: green;
+  min-width: 100px;
+  min-height: 100px;
+  padding: 10px;
+}

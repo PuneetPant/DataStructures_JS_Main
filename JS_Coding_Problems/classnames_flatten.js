@@ -6,15 +6,8 @@ function classNames(...args) {
       let elt = typeof ele;
       if (ele && (elt === "string" || elt === "number")) {
         ans.push(ele);
+        return;
       }
-      // if (elt === "string" && ele.length > 0) {
-      //   ans.push(ele);
-      //   return;
-      // }
-      // if (elt === "number" && ele > 0) {
-      //   ans.push(ele);
-      //   return;
-      // }
       if (Array.isArray(ele)) {
         convert(ele);
         return;

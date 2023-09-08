@@ -17,10 +17,10 @@ const camelCaseKeys = (obj) => {
 
       console.log(key, object[key], typeof object[key]);
       if (typeof object[key] !== "object") {
-        ans[newKey] = object[key];
+        ans[newKey] = { ...ans[newKey], ...object[key] };
       } else {
-        // ans[newKey] = object[key];
         convertToCamelCase(object[key]);
+        ans[newKey] = object[key];
       }
     });
   };
@@ -29,5 +29,5 @@ const camelCaseKeys = (obj) => {
   return ans;
 };
 
-let ans = camelCaseKeys({ foo_bar: true, bar_baz: { baz_qux: "1" } });
+let ans = camelCaseKeys({ foo_bar: true, bar_baz: { baz_quz: '1', quz: '2' } });
 console.log(ans);

@@ -60,7 +60,7 @@ const main = () => {
   // });
   // newPromiseAll([])
 
-  const promiseArr = [promiseMaker(3000, true), promiseMaker(4000, true), promiseMaker(2000, true)]
+  const promiseArr = [promiseMaker(4000, true), promiseMaker(3000, false), promiseMaker(2000, true)]
   // Promise.all(promiseArr).then(value => {
   //   console.log(value)
   // })
@@ -70,7 +70,7 @@ const main = () => {
   // let ans = Promise.all(promiseArr);
   // console.log("ans: ", ans)
 
-  newPromiseAll([2]).then(values => {
+  newPromiseAll(promiseArr).then(values => {
     console.log(values)
   })
 

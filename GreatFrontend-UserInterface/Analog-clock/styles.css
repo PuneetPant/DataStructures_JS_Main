@@ -1,30 +1,28 @@
 body {
-    font-family: sans-serif;
-  }
-  .clock-wrapper{
-    border-radius: 50%;
-    border: 3px solid #CCCCCC;
-    width: 300px;
-    height:300px;
-    position: relative;
-  }
-  .hour{
-    border:3px solid black;
-    height:75px;
-  }
-  .minute{
-    border:2px solid red;
-    height:100px;
-  }
-  .second{
-    border:1px solid blueviolet;
-    height:125px;
-    
-  }
-  .hand{
-    position: absolute;
-    left:50%;
-    bottom:50%;
-    transform-origin: bottom;
-  }
-  
+  font-family: sans-serif;
+}
+.clock-wrapper {
+  border-radius: 50%;
+  border: 3px solid #cccccc;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.hour {
+  border: 3px solid black;
+  height: 75px;
+}
+.minute {
+  border: 2px solid red;
+  height: 100px;
+}
+.second {
+  border: 1px solid blueviolet;
+  height: 125px;
+}
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom;
+}

@@ -54,20 +54,20 @@ import fetch from "node-fetch";
 //   console.log(res)
 // })
 
-const getUsers = async () => {
+// const getUsers = async () => {
 
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    let user = await response.json();
-    return user
+//   try {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+//     let user = await response.json();
+//     return user
 
-  } catch (err) {
-    // catches errors both in fetch and response.json
-    console.log(err);
-  }
-}
-let ans = await getUsers();
-console.log("ans: ", ans)
+//   } catch (err) {
+//     // catches errors both in fetch and response.json
+//     console.log(err);
+//   }
+// }
+// let ans = await getUsers();
+// console.log("ans: ", ans)
 
 
 const getUsers = async () => {

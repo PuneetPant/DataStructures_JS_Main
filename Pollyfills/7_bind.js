@@ -1,8 +1,9 @@
 
 Function.prototype.myBind = function (context, ...args) {
   let fn = this;
-  console.log(fn)
+  console.log(fn, args)
   return function (...args2) {
+    console.log(args2)
     fn.apply(context, [...args, ...args2])
   }
 }

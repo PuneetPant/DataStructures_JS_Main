@@ -26,13 +26,13 @@ const squashObject = (obj) => {
   return ans;
 };
 
-const object = {
-  a: {
-    b: [1, 2, 3],
-    c: ["foo"],
-  },
-};
-squashObject(object); // { 'a.b.0': 1, 'a.b.1': 2, 'a.b.2': 3, 'a.c.0': 'foo' }
+// const object = {
+//   a: {
+//     b: [1, 2, 3],
+//     c: ["foo"],
+//   },
+// };
+// squashObject(object); // { 'a.b.0': 1, 'a.b.1': 2, 'a.b.2': 3, 'a.c.0': 'foo' }
 
 // const object = {
 //   a: { b: null, c: undefined },
@@ -51,3 +51,24 @@ squashObject(object); // { 'a.b.0': 1, 'a.b.1': 2, 'a.b.2': 3, 'a.c.0': 'foo' }
 //   },
 // };
 // squashObject(object); // { a: 5, b: 6, 'c.f': 9, 'c.g.m': 17, 'c.g.n': 3 }
+
+// let object = {
+//   a: 'hi',
+//   b: {
+//     a: null,
+//     b: ['foo', '', null, 'bar'],
+//     d: 'hello',
+//     e: {
+//       a: 'yo',
+//       b: undefined,
+//       c: 'sup',
+//       d: 0,
+//       f: [
+//         { foo: 123, bar: 123 },
+//         { foo: 465, bar: 456 },
+//       ],
+//     },
+//   },
+//   c: 'world',
+// }
+// squashObject(object)

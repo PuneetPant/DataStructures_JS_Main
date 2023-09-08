@@ -33,7 +33,7 @@ const textSearch = (str, query) => {
   }
   console.log(arr.join(" "));
 };
-textSearch("aaa", "aa");
+textSearch("aabbbbcc", "bb");
 textSearch("The Quick Brown Fox Jumps Over The Lazy Dog", "fox");
 // 'The Quick Brown <b>Fox</b> Jumps Over The Lazy Dog'
 textSearch("The hardworking Dog overtakes the lazy dog", "dog");

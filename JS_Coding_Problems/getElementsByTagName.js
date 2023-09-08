@@ -15,6 +15,7 @@ function getElementsByTagName(rootElement, tagNameParam) {
       traverse(element.children[i]);
     }
   }
+  console.log("rootElement: ", rootElement)
 
   for (let i = 0; i < (rootElement.children || []).length; i++) {
     traverse(rootElement.children[i]);
@@ -31,5 +32,5 @@ const document = new DOMParser().parseFromString(
   </div>`,
   "text/html"
 );
-
+console.log(document)
 getElementsByTagName(document.body, "div");
