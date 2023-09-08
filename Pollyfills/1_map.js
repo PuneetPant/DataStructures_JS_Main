@@ -17,3 +17,18 @@ const main = () => {
   console.log(ans);
 };
 main();
+
+// Revision :
+Array.prototype.newMap = function (callback) {
+  let arr = [...this];
+  let ans = [];
+  for (let i = 0; i < arr.length; i++) {
+    let val = callback(arr[i]);
+    ans.push(val);
+  }
+  return ans;
+}
+let ans = [1, 2, 3, 4].newMap((val) => {
+  return val * 3
+})
+console.log(ans);

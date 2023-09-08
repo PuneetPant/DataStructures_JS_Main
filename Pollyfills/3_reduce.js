@@ -7,6 +7,15 @@ Array.prototype.newReduce = function (fn, initialValue = 0) {
   return result;
 };
 
+Array.prototype.myReducerPrac = function (fn, initialValue = 0) {
+  let arr = this;
+  let res = initialValue;
+  for (let i = 0; i < arr.length; i++) {
+    res = fn(res, arr[i])
+  }
+  return res;
+}
+
 const main = () => {
   // let sum = 0;
   // let arr = [1, 2, 3, 4];
@@ -14,25 +23,27 @@ const main = () => {
   //   sum += n;
   // }
 
-  // let arr = [1, 2, 3, 4];
-  // let sum = arr.reduce((accumulator, currentValue) => {
-  //   console.log(accumulator, currentValue);
-  //   return accumulator + currentValue;
-  // }, 0);
-  // console.log(sum);
+  let arr = [1, 2, 3, 4];
+  let sum = arr.reduce((accumulator, currentValue) => {
+    console.log(accumulator, currentValue);
+    return accumulator + currentValue;
+  }, 0);
+  console.log(sum);
 
   // let arr = [1, 2, 3, 4];
   // let val = arr.myReduce((acc, curr) => {
   //   return acc + curr;
   // });
   // console.log(val);
-  let queryString = "cat=meow&duck=quack&dog=woof";
-  const queryObject = queryString.split("&").newReduce((accum, current) => {
-    const splitString = current.split("=");
-    accum[splitString[0]] = splitString[1];
-    return accum;
-  }, {});
-  console.log(queryObject);
+
+
+  // let queryString = "cat=meow&duck=quack&dog=woof";
+  // const queryObject = queryString.split("&").newReduce((accum, current) => {
+  //   const splitString = current.split("=");
+  //   accum[splitString[0]] = splitString[1];
+  //   return accum;
+  // }, {});
+  // console.log(queryObject);
 };
 
 main();

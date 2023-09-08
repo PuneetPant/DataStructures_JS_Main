@@ -19,7 +19,7 @@ function serializeNode(node) {
   console.log(arr);
 
   // arr.join(" ");
-  console.log(`${arr.join("\n")}`);
+  console.log(arr.join("\n"));
 }
 const tree = {
   tag: "body",

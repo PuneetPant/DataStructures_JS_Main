@@ -26,3 +26,27 @@ main();
 //   }
 //   return ans;
 // }
+
+// Revision :
+Array.prototype.myFilter = function (callback) {
+  let arr = [...this];
+  let ans = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      ans.push(arr[i])
+    }
+  }
+  return ans;
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let ans1 = arr.filter((it) => {
+  return true;
+})
+console.log(ans1);
+console.log('----------')
+let ans = arr.myFilter((val) => {
+  return val % 2 === 0;
+})
+console.log(ans);
+

@@ -6,13 +6,14 @@ document.querySelector(".grandParent").addEventListener('click', () => {
   console.log('GrandParent Clicked!');
 })
 
-document.querySelector(".parent").addEventListener('click', () => {
+document.querySelector(".parent").addEventListener('click', (e) => {
+  // e.stopPropagation();
   console.log('Parent Clicked!');
 })
 
 document.querySelector(".child").addEventListener('click', (e) => {
-  // e.stopPropagation();
-  e.preventDefault();
+  e.stopPropagation();
+  // e.preventDefault();
   console.log('Child Clicked!');
 })
 
@@ -22,6 +23,7 @@ document.getElementById("parent-list").addEventListener("click", function (e) {
   // If it was a list item
   if (e.target && e.target.nodeName == "LI") {
     // List item found!  Output the ID!
+    // console.log(e.target.classList)
     console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
   }
 });

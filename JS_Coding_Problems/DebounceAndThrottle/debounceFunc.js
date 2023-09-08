@@ -12,4 +12,4 @@ const debounce = (fn, delay) => {
   };
 };
 
-const betterFunnction = debounce(getData, 3000);
+const betterFunction = debounce(getData, 3000);

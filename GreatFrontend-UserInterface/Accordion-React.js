@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import { useState } from 'react';
 export default function Accordion() {
-  const [arr, setArr] = useState([true,true,true])
+  const [arr, setArr] = useState([true, true, true])
   const handleClick = (idx) => {
     let newArr = [...arr];
     newArr[idx] = !arr[idx];
