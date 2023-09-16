@@ -12,7 +12,7 @@ document.querySelector(".parent").addEventListener('click', (e) => {
 })
 
 document.querySelector(".child").addEventListener('click', (e) => {
-  e.stopPropagation();
+  // e.stopPropagation();
   // e.preventDefault();
   console.log('Child Clicked!');
 })
