@@ -5,6 +5,13 @@ Function.prototype.myCall = function (obj) {
   fn.apply(obj);
 }
 
+Function.prototype.myCall = function (context, ...args) {
+  context.fn = this;
+  const result = context.fn(...args);
+  delete context.fn;
+  return result;
+};
+
 const main = () => {
 
   const name = {

@@ -16,6 +16,12 @@ Function.prototype.myApply = function (context, args) {
   let fn = this;
   fn.call(context, ...args)
 }
+Function.prototype.myApply = function (context, args) {
+  context.tempFn = this;
+  const result = context.tempFn(...args);
+  delete context.tempFn;
+  return result;
+};
 
 let getName = function (place, salary, profession) {
   console.log(this.first + " " + this.last, place, salary, profession)

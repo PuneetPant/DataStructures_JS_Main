@@ -1,4 +1,4 @@
-function get(object, path, defaultValue) {
+function get(object, path, defaultValue = 'puneet') {
   const getValue = (object, path, idx) => {
     if (idx == path.length) {
       // console.log("Here", object);
@@ -49,12 +49,12 @@ const main = () => {
     },
   };
   // console.log(a.hasOwnProperty("b"));
-  // get(john, "profile.name.firstName");
+  // console.log(get(john, "profile.name.firstNamee"))
   // get(john, "profile.gender");
   // get(obj, "a.b.c.0");
   // get(jane, "profile.name.firstName");
   // get(a, "b");
-  // get(puneet, "profile.b.2");
+  get(puneet, "profile.b.2");
 };
 
 main();
