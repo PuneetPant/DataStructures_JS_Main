@@ -1,20 +1,23 @@
-Array.prototype.newReduce = function (fn, initialValue = 0) {
-  let result = initialValue;
-  for (let i = 0; i < this.length; i++) {
-    console.log(result);
-    result = fn(result, this[i]);
+Array.prototype.myReduce = function (callback, initialValue) {
+  let i = 0;
+  let res;
+  if (initialValue == undefined) {
+    res = this[0];
+    i = 1;
+  } else {
+    res = initialValue;
+    i = 0;
   }
-  return result;
-};
-
-Array.prototype.myReducerPrac = function (fn, initialValue = 0) {
-  let arr = this;
-  let res = initialValue;
-  for (let i = 0; i < arr.length; i++) {
-    res = fn(res, arr[i])
+  for (i; i < this.length; i++) {
+    res = callback(res, this[i]);
   }
   return res;
-}
+};
+let arr = [1, 2, 3, 4, 5];
+let val = arr.myReduce((acc, curr) => {
+  return acc + curr;
+});
+console.log(val);
 
 const main = () => {
   // let sum = 0;
@@ -35,7 +38,6 @@ const main = () => {
   //   return acc + curr;
   // });
   // console.log(val);
-
 
   // let queryString = "cat=meow&duck=quack&dog=woof";
   // const queryObject = queryString.split("&").newReduce((accum, current) => {

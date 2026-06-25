@@ -9,6 +9,14 @@ const sum = (numberA) => {
     }
   };
 }
-
+function sum(value) {
+  return function (num) {
+    if (typeof num !== 'undefined') {
+      return sum(value + num)
+    } else {
+      return value
+    }
+  }
+}
 const result = sum(1)(2)(4)();
 console.log(result)
